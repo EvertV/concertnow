@@ -36,11 +36,16 @@ function brusselsDateFromIso(isoStr) {
 
 async function scrapeVenue(page, venue, dates) {
   const url = `https://www.ticketswap.com/location/${venue.slug}/${venue.tsId}`;
-  await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 30000 });
-
   try {
-    await page.waitForSelector('#__NEXT_DATA__', { timeout: 10000 });
-  } catch {
+    await page.goto(url, { waitUntil: 'networkidle', timeout: 45000 });
+  } catch (err) {
+    if (!err.message.includes('Timeout')) throw err;
+    // AB and others keep background connections open — networkidle never fires.
+    // Page data is still available; fall through and read it.
+  }
+
+  const el = await page.$('#__NEXT_DATA__');
+  if (!el) {
     console.warn(`  WAF challenge — skipping ${venue.name}`);
     return [];
   }
