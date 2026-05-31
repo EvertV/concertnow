@@ -1,25 +1,6 @@
 {
-  "updatedAt": "2026-05-31T19:24:32.169Z",
+  "updatedAt": "2026-05-31T20:38:59.546Z",
   "concerts": [
-    {
-      "id": "RXZlbnQ6MDE5YmVmM2MtNmNmNy03ZjRlLWFlYWQtOTkzMWRhMDA2NDk4",
-      "artist": "Coke Studio Session: marcel",
-      "venue": "Ancienne Belgique",
-      "hall": "",
-      "venueId": "ab",
-      "time": "19:00",
-      "genre": "",
-      "date": "2026-05-31",
-      "soldOut": false,
-      "lowestPrice": 17,
-      "availability": 1,
-      "availabilityStatus": "low",
-      "soldIn24h": 0,
-      "lastSoldPrice": null,
-      "lastSoldAgo": null,
-      "ticketTypes": [],
-      "ticketswapUrl": "https://www.ticketswap.com/concert-tickets/coke-studio-session-marcel-brussels-ancienne-belgique-2026-05-31-CXRvvxQNN6TDc9ruk3KwM"
-    },
     {
       "id": "RXZlbnQ6MDE5ZTJhYTAtMGI1ZC03ZTI0LTk3YmYtM2IzYzU1M2YwNTg5",
       "artist": "Rafi Bastos - Comfort Zone",
