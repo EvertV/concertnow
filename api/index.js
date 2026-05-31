@@ -2,6 +2,13 @@
 
 const { getConcerts, toDateStr, getUpdatedAt } = require('../lib/concerts');
 
+const VENUE_LOGOS = {
+  ab: 'https://www.google.com/s2/favicons?domain=anciennebelgique.be&sz=32',
+  cr: 'https://www.google.com/s2/favicons?domain=cirque-royal.be&sz=32',
+  bo: 'https://www.google.com/s2/favicons?domain=botanique.be&sz=32',
+  lm: 'https://www.google.com/s2/favicons?domain=la-madeleine.be&sz=32',
+};
+
 const DAY_NAMES = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 const MONTH_NAMES = ['January', 'February', 'March', 'April', 'May', 'June',
   'July', 'August', 'September', 'October', 'November', 'December'];
@@ -24,13 +31,9 @@ function tabLabel(dateStr, index) {
   return `${dayShort} ${day} ${mon}<span class="sub">${dayShort} ${day}</span>`;
 }
 
-function daymeta(dateStr, index) {
+function daymeta(dateStr) {
   const d = parseDate(dateStr);
-  const dayName = DAY_NAMES[d.getDay()];
-  const day = d.getDate();
-  const month = MONTH_NAMES[d.getMonth()];
-  const suffix = index === 0 ? 'live tonight' : index === 1 ? 'live tomorrow' : `coming up`;
-  return `${dayName} ${day} ${month} · ${suffix}`;
+  return DAY_NAMES[d.getDay()];
 }
 
 function emptyLabel(dateStr, index) {
@@ -80,10 +83,12 @@ function renderConcert(concert) {
   const soldoutClass = concert.soldOut ? ' soldout' : '';
   const priceLabel = concert.soldOut
     ? (concert.lastSoldPrice ? 'last sold' : 'sold out')
-    : 'from';
+    : null;
   const priceAmt = concert.soldOut
     ? (concert.lastSoldPrice ? `€${concert.lastSoldPrice}` : '—')
     : (concert.lowestPrice ? `€${concert.lowestPrice}` : '—');
+  const logoSrc = VENUE_LOGOS[concert.venueId];
+  const logoHtml = logoSrc ? `<img class="venue-logo" src="${h(logoSrc)}" width="16" height="16" alt="" />` : '';
 
   const soldNote = concert.lastSoldAgo && concert.lastSoldPrice
     ? `<p class="note">↺ <span>Last ticket sold <b>${h(concert.lastSoldAgo)}</b> for <b>€${h(concert.lastSoldPrice)}</b> · ${h(concert.soldIn24h)} resold in last 24h.</span></p>`
@@ -111,12 +116,12 @@ function renderConcert(concert) {
   <details class="show${soldoutClass} v-${h(concert.venueId)}">
     <summary>
       <div class="price">
-        <span class="lbl">${priceLabel}</span>
+        ${priceLabel ? `<span class="lbl">${priceLabel}</span>` : ''}
         <span class="amt">${priceAmt}</span>
       </div>
       <div class="info">
         <h3>${h(concert.artist)}</h3>
-        <p class="venue">${h(concert.venue)}${concert.hall ? ` <span class="hall">${h(concert.hall)}</span>` : ''}</p>
+        <p class="venue">${logoHtml}${h(concert.venue)}${concert.hall ? ` <span class="hall">${h(concert.hall)}</span>` : ''}</p>
         <p class="meta">${h(concert.time)}${concert.genre ? ` · ${h(concert.genre)}` : ''}</p>
         ${renderAvail(concert)}
       </div>
@@ -141,7 +146,7 @@ function renderDay(concerts, dateStr, index) {
 
   return `
   <section class="day" id="day${index}">
-    <p class="daymeta">${daymeta(dateStr, index)}</p>
+    <p class="daymeta">${daymeta(dateStr)}</p>
     ${concerts.map(renderConcert).join('')}
   </section>`;
 }
@@ -184,19 +189,20 @@ function renderPage({ dates, days, updatedAt }) {
           <h1 class="logo"><span class="live"></span>Concert<em>Now</em></h1>
           <span class="loc">Brussels</span>
         </div>
-        <p class="tagline">Browse tonight's concerts and the cheapest tickets available</p>
         <nav class="seg">
           <label for="d0">${tabLabel(d0, 0)}</label>
           <label for="d1">${tabLabel(d1, 1)}</label>
           <label for="d2">${tabLabel(d2, 2)}</label>
         </nav>
       </div>
+      <!-- venue filters temporarily hidden
       <div class="filters">
         <label class="chip" for="vab"><span class="dot"></span>Ancienne Belgique</label>
         <label class="chip" for="vcr"><span class="dot"></span>Cirque Royal</label>
         <label class="chip" for="vbo"><span class="dot"></span>Botanique</label>
         <label class="chip" for="vlm"><span class="dot"></span>La Madeleine</label>
       </div>
+      -->
     </header>
 
     <main>

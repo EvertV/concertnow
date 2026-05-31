@@ -127,6 +127,7 @@ main { padding-bottom: 8px; }
 
 .info h3 { font-size: 15px; font-weight: 600; letter-spacing: -.01em; line-height: 1.2; }
 .info .venue { font-size: 13px; font-weight: 600; color: var(--ink); margin-top: 3px; display: flex; align-items: center; flex-wrap: wrap; gap: 6px; }
+.venue-logo { width: 16px; height: 16px; border-radius: 3px; object-fit: contain; flex-shrink: 0; }
 .info .venue .hall {
   font-weight: 500; font-size: 10.5px; color: var(--soft);
   border: 1px solid var(--hair); border-radius: 5px; padding: 1px 6px; letter-spacing: .01em;
