@@ -1,0 +1,12 @@
+{
+  "name": "concertnow",
+  "version": "1.0.0",
+  "description": "Tonight's concerts in Brussels — cheapest ticket first.",
+  "main": "dev.js",
+  "scripts": {
+    "dev": "node dev.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
