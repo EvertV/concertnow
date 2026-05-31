@@ -31,10 +31,6 @@ function tabLabel(dateStr, index) {
   return `${dayShort} ${day} ${mon}<span class="sub">${dayShort} ${day}</span>`;
 }
 
-function daymeta(dateStr) {
-  const d = parseDate(dateStr);
-  return DAY_NAMES[d.getDay()];
-}
 
 function emptyLabel(dateStr, index) {
   const d = parseDate(dateStr);
@@ -63,12 +59,10 @@ function h(str) {
 function renderAvail(concert) {
   if (concert.soldOut) {
     const extra = concert.lastSoldAgo ? ` · last sold ${h(concert.lastSoldAgo)}` : '';
-    const wantedPart = concert.wanted ? ` · <span class="wanted">${h(concert.wanted)} wanted</span>` : '';
-    return `<p class="avail out">Sold out${extra}${wantedPart}</p>`;
+    return `<p class="avail out">Sold out${extra}</p>`;
   }
   const cls = concert.availabilityStatus === 'low' ? 'avail low' : 'avail';
-  const wantedPart = concert.wanted ? ` · <span class="wanted">${h(concert.wanted)} wanted</span>` : '';
-  return `<p class="${cls}">${h(concert.availability)} ticket${concert.availability === 1 ? '' : 's'} left${wantedPart}</p>`;
+  return `<p class="${cls}">${h(concert.availability)} ticket${concert.availability === 1 ? '' : 's'} left</p>`;
 }
 
 function renderTicketTypes(types) {
@@ -85,8 +79,8 @@ function renderConcert(concert) {
     ? (concert.lastSoldPrice ? 'last sold' : 'sold out')
     : null;
   const priceAmt = concert.soldOut
-    ? (concert.lastSoldPrice ? `€${concert.lastSoldPrice}` : '—')
-    : (concert.lowestPrice ? `€${concert.lowestPrice}` : '—');
+    ? (concert.lastSoldPrice ? `€${Math.round(concert.lastSoldPrice)}` : '—')
+    : (concert.lowestPrice ? `€${Math.round(concert.lowestPrice)}` : '—');
   const logoSrc = VENUE_LOGOS[concert.venueId];
   const logoHtml = logoSrc ? `<img class="venue-logo" src="${h(logoSrc)}" width="16" height="16" alt="" />` : '';
 
@@ -121,8 +115,7 @@ function renderConcert(concert) {
       </div>
       <div class="info">
         <h3>${h(concert.artist)}</h3>
-        <p class="venue">${logoHtml}${h(concert.venue)}${concert.hall ? ` <span class="hall">${h(concert.hall)}</span>` : ''}</p>
-        <p class="meta">${h(concert.time)}${concert.genre ? ` · ${h(concert.genre)}` : ''}</p>
+        <p class="meta">${logoHtml}${h(concert.venue)}${concert.hall ? ` <span class="hall">${h(concert.hall)}</span>` : ''} · ${h(concert.time)}</p>
         ${renderAvail(concert)}
       </div>
       <i class="chev"></i>
@@ -146,7 +139,6 @@ function renderDay(concerts, dateStr, index) {
 
   return `
   <section class="day" id="day${index}">
-    <p class="daymeta">${daymeta(dateStr)}</p>
     ${concerts.map(renderConcert).join('')}
   </section>`;
 }

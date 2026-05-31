@@ -64,7 +64,6 @@ async function scrapeVenue(page, venue, dates) {
           startDate: e.startDate,
           lowestPrice: e.lowestPrice?.amount ?? null,
           available: e.availableTicketsCount ?? 0,
-          wanted: e.wantedTicketsCount ?? null,
           uri: e.uri?.path ?? null,
           hasOngoingEventType: e.hasOngoingEventType ?? false,
         };
@@ -90,7 +89,6 @@ async function scrapeVenue(page, venue, dates) {
         lowestPrice,
         availability: available,
         availabilityStatus: available === 0 ? 'out' : available <= 5 ? 'low' : 'ok',
-        wanted: e.wanted ?? null,
         soldIn24h: 0,
         lastSoldPrice: null,
         lastSoldAgo: null,

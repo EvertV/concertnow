@@ -106,7 +106,6 @@ header { position: sticky; top: 0; z-index: 5; background: var(--surface); borde
 #vlm:not(:checked) ~ .app .v-lm { display: none; }
 
 main { padding-bottom: 8px; }
-.daymeta { padding: 16px 20px 6px; font-size: 12px; color: var(--soft); text-transform: uppercase; letter-spacing: .06em; }
 
 /* ---- concert row ---- */
 .day { display: none; }
@@ -117,17 +116,16 @@ main { padding-bottom: 8px; }
 .show { border-bottom: 1px solid var(--hair); }
 .show summary {
   list-style: none; cursor: pointer; display: grid;
-  grid-template-columns: 64px 1fr 16px; align-items: center; gap: 14px; padding: 14px 20px;
+  grid-template-columns: 52px 1fr 16px; align-items: center; gap: 14px; padding: 14px 20px;
 }
 .show summary::-webkit-details-marker { display: none; }
 
-.price { text-align: center; }
-.price .lbl { display: block; font-size: 9.5px; text-transform: uppercase; letter-spacing: .08em; color: var(--soft); }
-.price .amt { font-family: var(--mono); font-size: 21px; font-weight: 600; letter-spacing: -.03em; color: var(--accent); }
+.price { text-align: right; }
+.price .lbl { display: block; font-size: 9px; text-transform: uppercase; letter-spacing: .08em; color: var(--soft); margin-bottom: 1px; }
+.price .amt { font-family: var(--mono); font-size: 26px; font-weight: 700; letter-spacing: -.04em; color: var(--accent); line-height: 1; }
 
 .info h3 { font-size: 15px; font-weight: 600; letter-spacing: -.01em; line-height: 1.2; }
-.info .venue { font-size: 13px; font-weight: 600; color: var(--ink); margin-top: 3px; display: flex; align-items: center; flex-wrap: wrap; gap: 6px; }
-.venue-logo { width: 16px; height: 16px; border-radius: 3px; object-fit: contain; flex-shrink: 0; }
+.venue-logo { width: 16px; height: 16px; border-radius: 3px; object-fit: contain; flex-shrink: 0; vertical-align: middle; margin-right: 5px; position: relative; top: -1px; }
 .info .venue .hall {
   font-weight: 500; font-size: 10.5px; color: var(--soft);
   border: 1px solid var(--hair); border-radius: 5px; padding: 1px 6px; letter-spacing: .01em;
@@ -136,7 +134,7 @@ main { padding-bottom: 8px; }
 .info .avail { font-size: 12px; margin-top: 5px; font-weight: 600; color: var(--accent); }
 .info .avail.low { color: var(--warn); }
 .info .avail.out { color: var(--soft); font-weight: 500; }
-.info .avail .wanted { font-weight: 500; color: var(--soft); }
+
 
 .chev {
   width: 8px; height: 8px; border-right: 2px solid var(--soft); border-bottom: 2px solid var(--soft);
@@ -151,7 +149,7 @@ main { padding-bottom: 8px; }
 .show.soldout .price .amt { color: var(--soft); font-weight: 500; }
 
 /* expanded panel */
-.panel { padding: 2px 20px 20px 98px; }
+.panel { padding: 2px 20px 20px 86px; }
 .panel .ph { font-size: 10.5px; text-transform: uppercase; letter-spacing: .08em; color: var(--soft); margin-bottom: 6px; }
 .types { list-style: none; }
 .types li { display: flex; justify-content: space-between; font-size: 13.5px; padding: 8px 0; border-bottom: 1px solid var(--hair); }
