@@ -3,9 +3,9 @@
 const { getConcerts, toDateStr, getUpdatedAt } = require('../lib/concerts');
 
 const VENUE_LOGOS = {
-  ab: 'https://www.google.com/s2/favicons?domain=anciennebelgique.be&sz=32',
-  cr: 'https://www.google.com/s2/favicons?domain=cirque-royal.be&sz=32',
-  bo: 'https://www.google.com/s2/favicons?domain=botanique.be&sz=32',
+  ab: 'https://www.google.com/s2/favicons?domain=abconcerts.be&sz=32',
+  cr: 'https://www.google.com/s2/favicons?domain=cirqueroyalbruxelles.be/&sz=32',
+  bo: 'https://botanique.be/themes/custom/wundertheme/favicon.ico',
   lm: 'https://www.google.com/s2/favicons?domain=la-madeleine.be&sz=32',
 };
 
