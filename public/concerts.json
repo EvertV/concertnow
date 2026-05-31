@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-05-31T15:40:40.274Z",
+  "updatedAt": "2026-05-31T16:16:08.154Z",
   "concerts": [
     {
       "id": "RXZlbnQ6MDE5YmVmM2MtNmNmNy03ZjRlLWFlYWQtOTkzMWRhMDA2NDk4",
@@ -21,6 +21,25 @@
       "ticketswapUrl": "https://www.ticketswap.com/concert-tickets/coke-studio-session-marcel-brussels-ancienne-belgique-2026-05-31-CXRvvxQNN6TDc9ruk3KwM"
     },
     {
+      "id": "RXZlbnQ6MDE5ZTJhYTAtMGI1ZC03ZTI0LTk3YmYtM2IzYzU1M2YwNTg5",
+      "artist": "Rafi Bastos - Comfort Zone",
+      "venue": "La Madeleine",
+      "hall": "",
+      "venueId": "lm",
+      "time": "20:30",
+      "genre": "",
+      "date": "2026-05-31",
+      "soldOut": false,
+      "lowestPrice": 22.15,
+      "availability": 4,
+      "availabilityStatus": "low",
+      "soldIn24h": 0,
+      "lastSoldPrice": null,
+      "lastSoldAgo": null,
+      "ticketTypes": [],
+      "ticketswapUrl": "https://www.ticketswap.com/concert-tickets/rafi-bastos-comfort-zone-brussels-la-madeleine-2026-05-31-Cb3zXmFmcXicXAbMacXQL"
+    },
+    {
       "id": "RXZlbnQ6N2FhMzdhNjAtYWM4Ny00NTRkLTg5YzctOTQ5NmE0MTk5NmZj",
       "artist": "Monsieur Nicolas : Concert exceptionnel avec tous les musiciens",
       "venue": "Cirque Royal",
@@ -38,25 +57,6 @@
       "lastSoldAgo": null,
       "ticketTypes": [],
       "ticketswapUrl": "https://www.ticketswap.com/concert-tickets/monsieur-nicolas-brussels-cirque-royal-koninklijk-circus-2026-05-31-G9MCXuBbUv2HPSLeN2abmd"
-    },
-    {
-      "id": "RXZlbnQ6MDE5ZTJhYTAtMGI1ZC03ZTI0LTk3YmYtM2IzYzU1M2YwNTg5",
-      "artist": "Rafi Bastos - Comfort Zone",
-      "venue": "La Madeleine",
-      "hall": "",
-      "venueId": "lm",
-      "time": "20:30",
-      "genre": "",
-      "date": "2026-05-31",
-      "soldOut": false,
-      "lowestPrice": 33.06,
-      "availability": 4,
-      "availabilityStatus": "low",
-      "soldIn24h": 0,
-      "lastSoldPrice": null,
-      "lastSoldAgo": null,
-      "ticketTypes": [],
-      "ticketswapUrl": "https://www.ticketswap.com/concert-tickets/rafi-bastos-comfort-zone-brussels-la-madeleine-2026-05-31-Cb3zXmFmcXicXAbMacXQL"
     },
     {
       "id": "RXZlbnQ6MDE5ZGUzMTQtMGZhZC03MGJjLTljM2UtNWVjZTNlMzhlZDli",
