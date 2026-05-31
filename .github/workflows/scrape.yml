@@ -1,0 +1,39 @@
+name: Scrape TicketSwap
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'   # every 30 minutes
+  workflow_dispatch:          # manual trigger via GitHub UI
+
+permissions:
+  contents: write             # push updated concerts.json back to main
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright Chromium
+        run: npx playwright install chromium --with-deps
+
+      - name: Run scraper
+        run: node scripts/scrape.js
+
+      - name: Commit updated concert data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/concerts.json
+          git diff --staged --quiet && echo "No changes to commit" || \
+            (git commit -m "data: update concerts $(date -u '+%Y-%m-%dT%H:%MZ')" && git push)

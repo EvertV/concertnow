@@ -51,7 +51,8 @@ function h(str) {
 
 function renderAvail(concert) {
   if (concert.soldOut) {
-    return `<p class="avail out">Sold out · last sold ${h(concert.lastSoldAgo)}</p>`;
+    const extra = concert.lastSoldAgo ? ` · last sold ${h(concert.lastSoldAgo)}` : '';
+    return `<p class="avail out">Sold out${extra}</p>`;
   }
   const cls = concert.availabilityStatus === 'low' ? 'avail low' : 'avail';
   return `<p class="${cls}">${h(concert.availability)} ticket${concert.availability === 1 ? '' : 's'} left</p>`;
@@ -67,22 +68,32 @@ function renderTicketTypes(types) {
 
 function renderConcert(concert) {
   const soldoutClass = concert.soldOut ? ' soldout' : '';
-  const priceLabel = concert.soldOut ? 'last sold' : 'from';
-  const priceAmt = concert.soldOut ? `€${concert.lastSoldPrice}` : `€${concert.lowestPrice}`;
+  const priceLabel = concert.soldOut
+    ? (concert.lastSoldPrice ? 'last sold' : 'sold out')
+    : 'from';
+  const priceAmt = concert.soldOut
+    ? (concert.lastSoldPrice ? `€${concert.lastSoldPrice}` : '—')
+    : (concert.lowestPrice ? `€${concert.lowestPrice}` : '—');
+
+  const soldNote = concert.lastSoldAgo && concert.lastSoldPrice
+    ? `<p class="note">↺ <span>Last ticket sold <b>${h(concert.lastSoldAgo)}</b> for <b>€${h(concert.lastSoldPrice)}</b> · ${h(concert.soldIn24h)} resold in last 24h.</span></p>`
+    : '';
+  const soldInNote = concert.soldIn24h
+    ? `<p class="note">↺ <span><b>${h(concert.soldIn24h)} sold</b> in the last 24h</span></p>`
+    : '';
 
   const panel = concert.soldOut
     ? `
     <div class="panel">
       <p class="nofor">No tickets on sale right now.</p>
-      <p class="note">↺ <span>Last ticket sold <b>${h(concert.lastSoldAgo)}</b> for <b>€${h(concert.lastSoldPrice)}</b> · ${h(concert.soldIn24h)} resold in last 24h.</span></p>
+      ${soldNote}
       <button class="ts ghost">Notify me when tickets appear</button>
       <a class="ts" href="${h(concert.ticketswapUrl)}" target="_blank" rel="noopener">Open on TicketSwap <span class="arr">→</span></a>
     </div>`
     : `
     <div class="panel">
-      <p class="ph">Tickets on sale</p>
-      <ul class="types">${renderTicketTypes(concert.ticketTypes)}</ul>
-      <p class="note">↺ <span><b>${h(concert.soldIn24h)} sold</b> in the last 24h</span></p>
+      ${concert.ticketTypes.length ? `<p class="ph">Tickets on sale</p><ul class="types">${renderTicketTypes(concert.ticketTypes)}</ul>` : ''}
+      ${soldInNote}
       <a class="ts" href="${h(concert.ticketswapUrl)}" target="_blank" rel="noopener">Open on TicketSwap <span class="arr">→</span></a>
     </div>`;
 
@@ -95,8 +106,8 @@ function renderConcert(concert) {
       </div>
       <div class="info">
         <h3>${h(concert.artist)}</h3>
-        <p class="venue">${h(concert.venue)} <span class="hall">${h(concert.hall)}</span></p>
-        <p class="meta">${h(concert.time)} · ${h(concert.genre)}</p>
+        <p class="venue">${h(concert.venue)}${concert.hall ? ` <span class="hall">${h(concert.hall)}</span>` : ''}</p>
+        <p class="meta">${h(concert.time)}${concert.genre ? ` · ${h(concert.genre)}` : ''}</p>
         ${renderAvail(concert)}
       </div>
       <i class="chev"></i>
@@ -133,6 +144,7 @@ function renderPage({ dates, days }) {
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>ConcertNow · Brussels</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="stylesheet" href="/style.css" />
 </head>
 <body>

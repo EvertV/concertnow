@@ -4,9 +4,17 @@
   "description": "Tonight's concerts in Brussels — cheapest ticket first.",
   "main": "dev.js",
   "scripts": {
-    "dev": "node dev.js"
+    "dev": "node dev.js",
+    "scrape": "node scripts/scrape.js"
   },
   "engines": {
     "node": ">=18"
+  },
+  "devDependencies": {
+    "playwright": "^1.45.0"
+  },
+  "dependencies": {
+    "playwright-extra": "^4.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2"
   }
 }
