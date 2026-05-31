@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-05-31T17:50:32.839Z",
+  "updatedAt": "2026-05-31T18:43:43.211Z",
   "concerts": [
     {
       "id": "RXZlbnQ6MDE5YmVmM2MtNmNmNy03ZjRlLWFlYWQtOTkzMWRhMDA2NDk4",
@@ -12,7 +12,7 @@
       "date": "2026-05-31",
       "soldOut": false,
       "lowestPrice": 17,
-      "availability": 2,
+      "availability": 1,
       "availabilityStatus": "low",
       "soldIn24h": 0,
       "lastSoldPrice": null,
@@ -31,7 +31,7 @@
       "date": "2026-05-31",
       "soldOut": false,
       "lowestPrice": 22.15,
-      "availability": 7,
+      "availability": 6,
       "availabilityStatus": "ok",
       "soldIn24h": 0,
       "lastSoldPrice": null,
