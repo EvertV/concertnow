@@ -18,6 +18,7 @@ module.exports = async (req, res) => {
   }
 
   try {
+    const triggeredAt = new Date().toISOString();
     const r = await fetch(
       `https://api.github.com/repos/${REPO}/actions/workflows/${WORKFLOW}/dispatches`,
       {
@@ -40,7 +41,7 @@ module.exports = async (req, res) => {
     // GitHub returns 204 No Content on success — no run ID yet.
     // Frontend will poll /api/poll?after=<triggeredAt> to find the run.
     res.writeHead(200);
-    res.end(JSON.stringify({ triggered: true, triggeredAt: new Date().toISOString() }));
+    res.end(JSON.stringify({ triggered: true, triggeredAt }));
   } catch (err) {
     res.writeHead(500);
     res.end(JSON.stringify({ error: err.message }));

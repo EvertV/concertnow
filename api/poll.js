@@ -33,8 +33,10 @@ module.exports = async (req, res) => {
     );
     const data = await r.json();
     const runs = data.workflow_runs || [];
-    const run = after
-      ? runs.find(r => new Date(r.created_at) >= new Date(after))
+    // Allow 15s buffer: GitHub creates the run slightly before we record triggeredAt
+    const afterMs = after ? new Date(after).getTime() - 15000 : null;
+    const run = afterMs
+      ? runs.find(r => new Date(r.created_at).getTime() >= afterMs)
       : runs[0];
 
     if (!run) {

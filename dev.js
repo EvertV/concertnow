@@ -14,22 +14,26 @@ if (fs.existsSync(envPath)) {
 }
 
 const http = require('http');
-const handler = require('./api/index');
+const handlers = {
+  '/':           require('./api/index'),
+  '/api/refresh': require('./api/refresh'),
+  '/api/poll':    require('./api/poll'),
+};
 
-const MIME = { '.css': 'text/css', '.js': 'application/javascript', '.ico': 'image/x-icon' };
+const MIME = { '.css': 'text/css', '.js': 'application/javascript', '.ico': 'image/x-icon', '.svg': 'image/svg+xml' };
 
 const server = http.createServer(async (req, res) => {
+  const pathname = req.url.split('?')[0];
   // Serve static files from /public
-  if (req.url !== '/' && !req.url.startsWith('/?')) {
-    const filePath = path.join(__dirname, 'public', req.url.split('?')[0]);
-    const ext = path.extname(filePath);
-    if (fs.existsSync(filePath)) {
-      res.setHeader('Content-Type', MIME[ext] || 'text/plain');
-      fs.createReadStream(filePath).pipe(res);
-      return;
-    }
+  const filePath = path.join(__dirname, 'public', pathname);
+  const ext = path.extname(filePath);
+  if (ext && fs.existsSync(filePath)) {
+    res.setHeader('Content-Type', MIME[ext] || 'text/plain');
+    fs.createReadStream(filePath).pipe(res);
+    return;
   }
-  // Everything else → serverless handler
+  // Route to matching API handler
+  const handler = handlers[pathname] || handlers['/'];
   try {
     await handler(req, res);
   } catch (err) {
