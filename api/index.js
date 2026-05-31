@@ -1,6 +1,6 @@
 'use strict';
 
-const { getConcerts, toDateStr } = require('../lib/concerts');
+const { getConcerts, toDateStr, getUpdatedAt } = require('../lib/concerts');
 
 const DAY_NAMES = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 const MONTH_NAMES = ['January', 'February', 'March', 'April', 'May', 'June',
@@ -41,6 +41,14 @@ function emptyLabel(dateStr, index) {
   return `${dayName} ${day} ${month}`;
 }
 
+function formatUpdatedAt(isoStr) {
+  if (!isoStr) return null;
+  const d = new Date(isoStr);
+  const time = d.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', timeZone: 'Europe/Brussels' });
+  const date = d.toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short', timeZone: 'Europe/Brussels' });
+  return `${time} · ${date}`;
+}
+
 function h(str) {
   return String(str)
     .replace(/&/g, '&amp;')
@@ -52,10 +60,12 @@ function h(str) {
 function renderAvail(concert) {
   if (concert.soldOut) {
     const extra = concert.lastSoldAgo ? ` · last sold ${h(concert.lastSoldAgo)}` : '';
-    return `<p class="avail out">Sold out${extra}</p>`;
+    const wantedPart = concert.wanted ? ` · <span class="wanted">${h(concert.wanted)} wanted</span>` : '';
+    return `<p class="avail out">Sold out${extra}${wantedPart}</p>`;
   }
   const cls = concert.availabilityStatus === 'low' ? 'avail low' : 'avail';
-  return `<p class="${cls}">${h(concert.availability)} ticket${concert.availability === 1 ? '' : 's'} left</p>`;
+  const wantedPart = concert.wanted ? ` · <span class="wanted">${h(concert.wanted)} wanted</span>` : '';
+  return `<p class="${cls}">${h(concert.availability)} ticket${concert.availability === 1 ? '' : 's'} left${wantedPart}</p>`;
 }
 
 function renderTicketTypes(types) {
@@ -136,7 +146,16 @@ function renderDay(concerts, dateStr, index) {
   </section>`;
 }
 
-function renderPage({ dates, days }) {
+function renderFooter(updatedAt) {
+  const label = updatedAt ? `Updated ${h(updatedAt)}` : 'No data yet';
+  return `
+  <footer>
+    <span class="updated-at">${label}</span>
+    <button class="refresh-btn" id="refresh-btn">↺ Refresh</button>
+  </footer>`;
+}
+
+function renderPage({ dates, days, updatedAt }) {
   const [d0, d1, d2] = dates;
   return `<!DOCTYPE html>
 <html lang="en">
@@ -165,7 +184,7 @@ function renderPage({ dates, days }) {
           <h1 class="logo"><span class="live"></span>Concert<em>Now</em></h1>
           <span class="loc">Brussels</span>
         </div>
-        <p class="tagline">Tonight's gigs — cheapest ticket first.</p>
+        <p class="tagline">Browse tonight's concerts and the cheapest tickets available</p>
         <nav class="seg">
           <label for="d0">${tabLabel(d0, 0)}</label>
           <label for="d1">${tabLabel(d1, 1)}</label>
@@ -185,7 +204,89 @@ function renderPage({ dates, days }) {
       ${renderDay(days[1], d1, 1)}
       ${renderDay(days[2], d2, 2)}
     </main>
+    ${renderFooter(updatedAt)}
   </div>
+<script>
+(function () {
+  var btn = document.getElementById('refresh-btn');
+  var footer = document.querySelector('footer');
+  if (!btn) return;
+
+  btn.addEventListener('click', function () {
+    btn.hidden = true;
+    var status = document.createElement('span');
+    status.className = 'refresh-status';
+    status.textContent = 'Starting…';
+    footer.appendChild(status);
+
+    var triggeredAt, pollTimer, tickTimer, deploySecondsLeft;
+
+    function setText(t) { status.textContent = t; }
+
+    function startDeployCountdown() {
+      deploySecondsLeft = 90;
+      setText('Scraper done · deploying… ' + deploySecondsLeft + 's');
+      tickTimer = setInterval(function () {
+        deploySecondsLeft--;
+        if (deploySecondsLeft <= 0) {
+          clearInterval(tickTimer);
+          setText('Reloading…');
+          setTimeout(function () { location.reload(); }, 500);
+        } else {
+          setText('Scraper done · deploying… ' + deploySecondsLeft + 's');
+        }
+      }, 1000);
+    }
+
+    function poll(after) {
+      fetch('/api/poll?after=' + encodeURIComponent(after))
+        .then(function (r) { return r.json(); })
+        .then(function (data) {
+          if (data.status === 'completed') {
+            clearInterval(pollTimer);
+            if (data.conclusion === 'success') {
+              startDeployCountdown();
+            } else {
+              setText('Scrape failed. ');
+              btn.hidden = false;
+            }
+          } else if (data.status === 'in_progress') {
+            setText('Scraper running…');
+          }
+          // queued or unknown: keep polling silently
+        })
+        .catch(function () { /* network hiccup — keep polling */ });
+    }
+
+    fetch('/api/refresh', { method: 'POST' })
+      .then(function (r) { return r.json(); })
+      .then(function (data) {
+        if (!data.triggered) throw new Error('not triggered');
+        triggeredAt = data.triggeredAt;
+        setText('Scraper queued…');
+        // GitHub takes a few seconds to create the run record, start polling after 5s
+        setTimeout(function () {
+          poll(triggeredAt);
+          pollTimer = setInterval(function () { poll(triggeredAt); }, 8000);
+        }, 5000);
+        // Safety timeout at 6 min
+        setTimeout(function () {
+          if (pollTimer) clearInterval(pollTimer);
+          if (tickTimer) clearInterval(tickTimer);
+          setText('Taking longer than expected — ');
+          var a = document.createElement('a');
+          a.href = '/';
+          a.textContent = 'reload manually';
+          status.appendChild(a);
+        }, 360000);
+      })
+      .catch(function () {
+        setText('Could not reach server.');
+        btn.hidden = false;
+      });
+  });
+}());
+</script>
 </body>
 </html>`;
 }
@@ -198,8 +299,9 @@ module.exports = async (req, res) => {
   ];
 
   const days = await Promise.all(dates.map(d => getConcerts(d)));
+  const updatedAt = formatUpdatedAt(getUpdatedAt());
 
-  const html = renderPage({ dates, days });
+  const html = renderPage({ dates, days, updatedAt });
   res.setHeader('Content-Type', 'text/html; charset=utf-8');
   res.setHeader('Cache-Control', 'no-store');
   res.end(html);
