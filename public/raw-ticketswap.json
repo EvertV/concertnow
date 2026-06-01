@@ -1,0 +1,308 @@
+{
+  "scrapedAt": "2026-06-01T07:04:36.417Z",
+  "venues": {
+    "ab": {
+      "venue": "Ancienne Belgique",
+      "events": [
+        {
+          "__typename": "Event",
+          "id": "RXZlbnQ6MDE5ZGUzMTMtN2U2OS03NTNjLWI5ZjYtYmNhMzc4YWYxZjQ2",
+          "alias": null,
+          "startDate": "2026-06-02T00:00:00+02:00",
+          "endDate": "2026-06-03T06:00:00+02:00",
+          "isStartTimeUnknown": false,
+          "hasOngoingEventType": false,
+          "slug": "moor-mother-aquiles-navarro-olof-melander",
+          "name": "Moor Mother + Aquiles Navarro & Olof Melander",
+          "category": "CONCERTS",
+          "imageSmallUrl": null,
+          "imageUrl": "https://ticketswap-image-cdn.b-cdn.net/public/202302/ab-ancienne-belgique-71909400.header.jpeg",
+          "status": "ACTIVE",
+          "rsvpStatus": null,
+          "uri": {
+            "__typename": "Uri",
+            "path": "/concert-tickets/moor-mother-aquiles-navarro-olof-melander-brussels-ancienne-belgique-2026-06-02-CabgubeETnX9ucidmNNgu"
+          },
+          "availableTicketsCount": 0,
+          "availableEntranceTicketsCount": 0,
+          "location": {
+            "__ref": "Location:TG9jYXRpb246MjA4"
+          },
+          "country": {
+            "__ref": "Country:{\"code\":\"BE\"}"
+          },
+          "favorites": {
+            "__typename": "EventFavorites",
+            "summary": null
+          },
+          "artists:{}": {
+            "__typename": "ArtistConnection",
+            "edges": []
+          },
+          "lowestPrice": null
+        },
+        {
+          "__typename": "Event",
+          "id": "RXZlbnQ6MDE5Yjk3YjAtYjUxZi03NzA1LWIyOGQtNmJkMGVlOTg2OThj",
+          "alias": null,
+          "startDate": "2026-06-02T19:00:00+02:00",
+          "endDate": "2026-06-02T22:30:00+02:00",
+          "isStartTimeUnknown": false,
+          "hasOngoingEventType": false,
+          "slug": "holy",
+          "name": "HOLY",
+          "category": "CONCERTS",
+          "imageSmallUrl": null,
+          "imageUrl": "https://ticketswap-image-cdn.b-cdn.net/public/202601/holy-ancienne-belgique-02-june-2026-1767776520.image.jpeg",
+          "status": "ACTIVE",
+          "rsvpStatus": null,
+          "uri": {
+            "__typename": "Uri",
+            "path": "/concert-tickets/holy-brussels-ancienne-belgique-2026-06-02-CWskDHB1nCLtaDhccUGhR"
+          },
+          "availableTicketsCount": 0,
+          "availableEntranceTicketsCount": 0,
+          "location": {
+            "__ref": "Location:TG9jYXRpb246MjA4"
+          },
+          "country": {
+            "__ref": "Country:{\"code\":\"BE\"}"
+          },
+          "favorites": {
+            "__typename": "EventFavorites",
+            "summary": null
+          },
+          "artists:{}": {
+            "__typename": "ArtistConnection",
+            "edges": []
+          },
+          "lowestPrice": null
+        },
+        {
+          "__typename": "Event",
+          "id": "RXZlbnQ6MDE5ZGY3YjMtMGI4OS03NGI1LThlOTctY2NjZDcxYmI2Y2M0",
+          "alias": null,
+          "startDate": "2026-06-03T00:00:00+02:00",
+          "endDate": "2026-06-04T06:00:00+02:00",
+          "isStartTimeUnknown": false,
+          "hasOngoingEventType": false,
+          "slug": "nightlab-w-blck-mamba-dj-workshop-intermediate",
+          "name": "Nightlab w/BLCK Mamba DJ workshop: intermediate",
+          "category": "CONCERTS",
+          "imageSmallUrl": null,
+          "imageUrl": "https://ticketswap-image-cdn.b-cdn.net/public/202302/ab-ancienne-belgique-71909400.header.jpeg",
+          "status": "ACTIVE",
+          "rsvpStatus": null,
+          "uri": {
+            "__typename": "Uri",
+            "path": "/concert-tickets/nightlab-w-blck-mamba-dj-workshop-intermediate-brussels-ancienne-belgique-2026-06-03-CajGeo87TSvBX7GYPXJKV"
+          },
+          "availableTicketsCount": 0,
+          "availableEntranceTicketsCount": 0,
+          "location": {
+            "__ref": "Location:TG9jYXRpb246MjA4"
+          },
+          "country": {
+            "__ref": "Country:{\"code\":\"BE\"}"
+          },
+          "favorites": {
+            "__typename": "EventFavorites",
+            "summary": null
+          },
+          "artists:{}": {
+            "__typename": "ArtistConnection",
+            "edges": []
+          },
+          "lowestPrice": null
+        },
+        {
+          "__typename": "Event",
+          "id": "RXZlbnQ6MDE5YjI2ZDctYThjOS03MWM0LWExODItZDZkMjFkYTViMjdm",
+          "alias": null,
+          "startDate": "2026-06-03T12:00:00+02:00",
+          "endDate": "2026-06-05T23:59:00+02:00",
+          "isStartTimeUnknown": false,
+          "hasOngoingEventType": false,
+          "slug": "holy",
+          "name": "HOLY",
+          "category": "CONCERTS",
+          "imageSmallUrl": null,
+          "imageUrl": "https://ticketswap-image-cdn.b-cdn.net/public/202302/ab-ancienne-belgique-71909400.header.jpeg",
+          "status": "ACTIVE",
+          "rsvpStatus": null,
+          "uri": {
+            "__typename": "Uri",
+            "path": "/concert-tickets/holy-brussels-ancienne-belgique-2026-06-03-CWAFz1NxjbheRnMRfpjV8"
+          },
+          "availableTicketsCount": 0,
+          "availableEntranceTicketsCount": 0,
+          "location": {
+            "__ref": "Location:TG9jYXRpb246MjA4"
+          },
+          "country": {
+            "__ref": "Country:{\"code\":\"BE\"}"
+          },
+          "favorites": {
+            "__typename": "EventFavorites",
+            "summary": null
+          },
+          "artists:{}": {
+            "__typename": "ArtistConnection",
+            "edges": []
+          },
+          "lowestPrice": null
+        }
+      ]
+    },
+    "cr": {
+      "venue": "Cirque Royal",
+      "events": [
+        {
+          "__typename": "Event",
+          "id": "RXZlbnQ6MDE5Y2JjZTMtZTMzNC03OWYxLTk4MjQtZjBjMTAyZjdjMjdk",
+          "alias": null,
+          "startDate": "2026-06-03T18:30:00+02:00",
+          "endDate": null,
+          "isStartTimeUnknown": false,
+          "hasOngoingEventType": false,
+          "slug": "pacifica",
+          "name": "Pacifica",
+          "category": "CONCERTS",
+          "imageSmallUrl": null,
+          "imageUrl": "https://ticketswap-image-cdn.b-cdn.net/public/202603/pacifica-cirque-royal-koninklijk-circus-03-june-2026-1772695579.image.jpeg",
+          "status": "ACTIVE",
+          "rsvpStatus": null,
+          "uri": {
+            "__typename": "Uri",
+            "path": "/concert-tickets/pacifica-brussels-cirque-royal-koninklijk-circus-2026-06-03-CYjY3iBA8VUHBq7Tua8ng"
+          },
+          "availableTicketsCount": 0,
+          "availableEntranceTicketsCount": 0,
+          "location": {
+            "__ref": "Location:TG9jYXRpb246MTI3OTY="
+          },
+          "country": {
+            "__ref": "Country:{\"code\":\"BE\"}"
+          },
+          "favorites": {
+            "__typename": "EventFavorites",
+            "summary": null
+          },
+          "artists:{}": {
+            "__typename": "ArtistConnection",
+            "edges": [
+              {
+                "__typename": "ArtistEdge",
+                "node": {
+                  "__ref": "Artist:QXJ0aXN0OjY4ZmZlNzliLTUxN2UtNDUwNi05Mjg3LTUxNmI0ZDYzMDg5Zg=="
+                }
+              }
+            ]
+          },
+          "lowestPrice": null
+        },
+        {
+          "__typename": "Event",
+          "id": "RXZlbnQ6ZWIzMjNkYjItZDBhYi00OTUwLWI1OGMtYzRmOTM5YTg1NDVh",
+          "alias": null,
+          "startDate": "2026-06-03T20:00:00+02:00",
+          "endDate": null,
+          "isStartTimeUnknown": false,
+          "hasOngoingEventType": false,
+          "slug": "panayotis-pascot",
+          "name": "Panayotis Pascot",
+          "category": "CONCERTS",
+          "imageSmallUrl": null,
+          "imageUrl": "https://ticketswap-image-cdn.b-cdn.net/public/202506/panayotis-pascot-cirque-royal-koninklijk-circus-03-june-2026-1749445429.image.jpeg",
+          "status": "ACTIVE",
+          "rsvpStatus": null,
+          "uri": {
+            "__typename": "Uri",
+            "path": "/concert-tickets/panayotis-pascot-brussels-cirque-royal-koninklijk-circus-2026-06-03-W3VmsDqUVZx4dNrvPT2VvZ"
+          },
+          "availableTicketsCount": 9,
+          "availableEntranceTicketsCount": 9,
+          "location": {
+            "__ref": "Location:TG9jYXRpb246MTI3OTY="
+          },
+          "country": {
+            "__ref": "Country:{\"code\":\"BE\"}"
+          },
+          "favorites": {
+            "__typename": "EventFavorites",
+            "summary": null
+          },
+          "artists:{}": {
+            "__typename": "ArtistConnection",
+            "edges": [
+              {
+                "__typename": "ArtistEdge",
+                "node": {
+                  "__ref": "Artist:QXJ0aXN0OjM5ZDNmNGM3LWM0NjctNGE4Yi1iODJlLWM5Mzg3NDhmMDFmZQ=="
+                }
+              }
+            ]
+          },
+          "lowestPrice": {
+            "__typename": "Money",
+            "amount": "3306",
+            "currency": "EUR"
+          }
+        }
+      ]
+    },
+    "bo": {
+      "venue": "Botanique",
+      "events": []
+    },
+    "lm": {
+      "venue": "La Madeleine",
+      "events": [
+        {
+          "__typename": "Event",
+          "id": "RXZlbnQ6MDE5Y2EwYjYtYzlmYS03NTRmLWEyMzAtZjJkYjAxYWEzYWIz",
+          "alias": null,
+          "startDate": "2026-06-03T20:00:00+02:00",
+          "endDate": null,
+          "isStartTimeUnknown": false,
+          "hasOngoingEventType": false,
+          "slug": "jazzy-bazz",
+          "name": "Jazzy Bazz",
+          "category": "CONCERTS",
+          "imageSmallUrl": null,
+          "imageUrl": "https://ticketswap-image-cdn.b-cdn.net/public/202504/0426c401-9cb1-4a03-9e0a-6fdc6ab4d1c7.jpg",
+          "status": "ACTIVE",
+          "rsvpStatus": null,
+          "uri": {
+            "__typename": "Uri",
+            "path": "/concert-tickets/jazzy-bazz-brussels-la-madeleine-2026-06-03-CYZBFfHsUJTCDHeFm8qTx"
+          },
+          "availableTicketsCount": 0,
+          "availableEntranceTicketsCount": 0,
+          "location": {
+            "__ref": "Location:TG9jYXRpb246MTIxNzQ="
+          },
+          "country": {
+            "__ref": "Country:{\"code\":\"BE\"}"
+          },
+          "favorites": {
+            "__typename": "EventFavorites",
+            "summary": null
+          },
+          "artists:{}": {
+            "__typename": "ArtistConnection",
+            "edges": [
+              {
+                "__typename": "ArtistEdge",
+                "node": {
+                  "__ref": "Artist:QXJ0aXN0OjRlMTgyOGQyLWQ0OTYtNDk5Mi04MGRkLTRjNDUyYTlhOGExMw=="
+                }
+              }
+            ]
+          },
+          "lowestPrice": null
+        }
+      ]
+    }
+  }
+}

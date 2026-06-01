@@ -50,30 +50,32 @@ async function scrapeVenue(page, venue, dates) {
     return [];
   }
 
-  const events = await page.evaluate(() => {
+  const { events, rawEvents } = await page.evaluate(() => {
     const el = document.getElementById('__NEXT_DATA__');
-    if (!el) return [];
+    if (!el) return { events: [], rawEvents: [] };
     const apollo = JSON.parse(el.textContent).props?.pageProps?.initialApolloState || {};
-    return Object.keys(apollo)
+    const entries = Object.keys(apollo)
       .filter(k => k.startsWith('Event:'))
-      .map(k => {
-        const e = apollo[k];
-        return {
-          id: e.id,
-          name: e.name,
-          startDate: e.startDate,
-          lowestPrice: e.lowestPrice?.amount ?? null,
-          originalPrice: e.originalPrice?.amount ?? null,
-          available: e.availableTicketsCount ?? 0,
-          uri: e.uri?.path ?? null,
-          hasOngoingEventType: e.hasOngoingEventType ?? false,
-        };
-      });
+      .map(k => apollo[k]);
+    const events = entries.map(e => ({
+      id: e.id,
+      name: e.name,
+      startDate: e.startDate,
+      lowestPrice: e.lowestPrice?.amount ?? null,
+      originalPrice: e.originalPrice?.amount ?? null,
+      available: e.availableTicketsCount ?? 0,
+      uri: e.uri?.path ?? null,
+      hasOngoingEventType: e.hasOngoingEventType ?? false,
+    }));
+    return { events, rawEvents: entries };
   });
 
   const maxDate = dates[dates.length - 1];
-  return events
-    .filter(e => !e.hasOngoingEventType && brusselsDateFromIso(e.startDate) >= dates[0] && brusselsDateFromIso(e.startDate) <= maxDate)
+  const filtered = events.filter(e => !e.hasOngoingEventType && brusselsDateFromIso(e.startDate) >= dates[0] && brusselsDateFromIso(e.startDate) <= maxDate);
+  const filteredIds = new Set(filtered.map(e => e.id));
+  venue._rawEvents = rawEvents.filter(e => filteredIds.has(e.id));
+
+  return filtered
     .map(e => {
       const available = e.available ?? 0;
       const lowestPrice = e.lowestPrice ? parseInt(e.lowestPrice, 10) / 100 : null;
@@ -120,12 +122,14 @@ async function main() {
   const page = await context.newPage();
 
   const concerts = [];
+  const rawByVenue = {};
   for (const venue of VENUES) {
     console.log(`\nScraping ${venue.name}...`);
     try {
       const found = await scrapeVenue(page, venue, dates);
       console.log(`  ${found.length} events in next 3 days`);
       concerts.push(...found);
+      rawByVenue[venue.id] = { venue: venue.name, events: venue._rawEvents || [] };
     } catch (err) {
       console.error(`  Error: ${err.message}`);
     }
@@ -141,6 +145,10 @@ async function main() {
   const out = path.join(__dirname, '..', 'public', 'concerts.json');
   fs.writeFileSync(out, JSON.stringify({ updatedAt: new Date().toISOString(), concerts }, null, 2));
   console.log(`\nWrote ${concerts.length} concerts to ${out}`);
+
+  const rawOut = path.join(__dirname, '..', 'public', 'raw-ticketswap.json');
+  fs.writeFileSync(rawOut, JSON.stringify({ scrapedAt: new Date().toISOString(), venues: rawByVenue }, null, 2));
+  console.log(`Wrote raw data to ${rawOut}`);
 }
 
 main().catch(err => { console.error(err); process.exit(1); });
