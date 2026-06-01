@@ -63,6 +63,7 @@ async function scrapeVenue(page, venue, dates) {
           name: e.name,
           startDate: e.startDate,
           lowestPrice: e.lowestPrice?.amount ?? null,
+          originalPrice: e.originalPrice?.amount ?? null,
           available: e.availableTicketsCount ?? 0,
           uri: e.uri?.path ?? null,
           hasOngoingEventType: e.hasOngoingEventType ?? false,
@@ -76,6 +77,7 @@ async function scrapeVenue(page, venue, dates) {
     .map(e => {
       const available = e.available ?? 0;
       const lowestPrice = e.lowestPrice ? parseInt(e.lowestPrice, 10) / 100 : null;
+      const originalPrice = e.originalPrice ? parseInt(e.originalPrice, 10) / 100 : null;
       return {
         id: e.id,
         artist: e.name,
@@ -87,6 +89,7 @@ async function scrapeVenue(page, venue, dates) {
         date: brusselsDateFromIso(e.startDate),
         soldOut: available === 0,
         lowestPrice,
+        originalPrice,
         availability: available,
         availabilityStatus: available === 0 ? 'out' : available <= 5 ? 'low' : 'ok',
         soldIn24h: 0,

@@ -123,6 +123,7 @@ main { padding-bottom: 8px; }
 .price { text-align: right; }
 .price .lbl { display: block; font-size: 9px; text-transform: uppercase; letter-spacing: .08em; color: var(--soft); margin-bottom: 1px; }
 .price .amt { font-family: var(--mono); font-size: 26px; font-weight: 700; letter-spacing: -.04em; color: var(--accent); line-height: 1; }
+.price .orig { display: block; font-size: 10px; color: var(--soft); margin-top: 3px; }
 
 .info h3 { font-size: 15px; font-weight: 600; letter-spacing: -.01em; line-height: 1.2; }
 .venue-logo { width: 16px; height: 16px; border-radius: 3px; object-fit: contain; flex-shrink: 0; vertical-align: middle; margin-right: 5px; position: relative; top: -1px; }
@@ -132,7 +133,6 @@ main { padding-bottom: 8px; }
 }
 .info .meta { font-size: 12px; color: var(--soft); margin-top: 3px; }
 .info .avail { font-size: 12px; margin-top: 5px; font-weight: 600; color: var(--accent); }
-.info .avail.low { color: var(--warn); }
 .info .avail.out { color: var(--soft); font-weight: 500; }
 
 
@@ -142,10 +142,7 @@ main { padding-bottom: 8px; }
 }
 .show[open] .chev { transform: rotate(225deg); margin-top: 3px; }
 
-/* sold out: quiet */
-.show.soldout summary { opacity: .5; }
-.show.soldout:hover summary,
-.show.soldout[open] summary { opacity: 1; }
+/* sold out */
 .show.soldout .price .amt { color: var(--soft); font-weight: 500; }
 
 /* expanded panel */

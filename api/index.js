@@ -81,6 +81,9 @@ function renderConcert(concert) {
   const priceAmt = concert.soldOut
     ? (concert.lastSoldPrice ? `€${Math.round(concert.lastSoldPrice)}` : '—')
     : (concert.lowestPrice ? `€${Math.round(concert.lowestPrice)}` : '—');
+  const origLine = (!concert.soldOut && concert.originalPrice)
+    ? `<span class="orig">face €${Math.round(concert.originalPrice)}</span>`
+    : '';
   const logoSrc = VENUE_LOGOS[concert.venueId];
   const logoHtml = logoSrc ? `<img class="venue-logo" src="${h(logoSrc)}" width="16" height="16" alt="" />` : '';
 
@@ -112,6 +115,7 @@ function renderConcert(concert) {
       <div class="price">
         ${priceLabel ? `<span class="lbl">${priceLabel}</span>` : ''}
         <span class="amt">${priceAmt}</span>
+        ${origLine}
       </div>
       <div class="info">
         <h3>${h(concert.artist)}</h3>
@@ -222,7 +226,7 @@ function renderPage({ dates, days, updatedAt }) {
     function setText(t) { status.textContent = t; }
 
     function startDeployCountdown() {
-      deploySecondsLeft = 90;
+      deploySecondsLeft = 8;
       setText('Scraper done · deploying… ' + deploySecondsLeft + 's');
       tickTimer = setInterval(function () {
         deploySecondsLeft--;
