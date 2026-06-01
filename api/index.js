@@ -75,9 +75,7 @@ function renderTicketTypes(types) {
 
 function renderConcert(concert) {
   const soldoutClass = concert.soldOut ? ' soldout' : '';
-  const priceLabel = concert.soldOut
-    ? (concert.lastSoldPrice ? 'last sold' : 'not listed')
-    : null;
+  const priceLabel = concert.soldOut && concert.lastSoldPrice ? 'last sold' : null;
   const priceAmt = concert.soldOut
     ? (concert.lastSoldPrice ? `€${Math.round(concert.lastSoldPrice)}` : '—')
     : (concert.lowestPrice ? `€${Math.round(concert.lowestPrice)}` : '—');
