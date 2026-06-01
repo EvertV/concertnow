@@ -57,12 +57,15 @@ function h(str) {
 }
 
 function renderAvail(concert) {
+  if (concert.isOngoing) {
+    const tickets = concert.soldOut ? '' : ` · ${h(concert.availability)} ticket${concert.availability === 1 ? '' : 's'}`;
+    return `<p class="avail on-now"><span class="dot-live"></span>On now${tickets}</p>`;
+  }
   if (concert.soldOut) {
     const extra = concert.lastSoldAgo ? ` · last sold ${h(concert.lastSoldAgo)}` : '';
     return `<p class="avail out">Not listed${extra}</p>`;
   }
-  const cls = concert.availabilityStatus === 'low' ? 'avail low' : 'avail';
-  return `<p class="${cls}">${h(concert.availability)} ticket${concert.availability === 1 ? '' : 's'} left</p>`;
+  return `<p class="avail">${h(concert.availability)} ticket${concert.availability === 1 ? '' : 's'} left</p>`;
 }
 
 function renderTicketTypes(types) {
@@ -82,6 +85,12 @@ function renderConcert(concert) {
   const origLine = (!concert.soldOut && concert.originalPrice)
     ? `<span class="orig">face €${Math.round(concert.originalPrice)}</span>`
     : '';
+  const timeDisplay = concert.endTime
+    ? `${h(concert.time)} – ${h(concert.endTime)}`
+    : h(concert.time);
+  const imgHtml = concert.imageUrl
+    ? `<img class="panel-img" src="${h(concert.imageUrl)}" alt="" loading="lazy" />`
+    : '';
   const logoSrc = VENUE_LOGOS[concert.venueId];
   const logoHtml = logoSrc ? `<img class="venue-logo" src="${h(logoSrc)}" width="16" height="16" alt="" />` : '';
 
@@ -95,6 +104,7 @@ function renderConcert(concert) {
   const panel = concert.soldOut
     ? `
     <div class="panel">
+      ${imgHtml}
       <p class="nofor">No tickets on sale right now.</p>
       ${soldNote}
       <button class="ts ghost">Notify me when tickets appear</button>
@@ -102,6 +112,7 @@ function renderConcert(concert) {
     </div>`
     : `
     <div class="panel">
+      ${imgHtml}
       ${concert.ticketTypes.length ? `<p class="ph">Tickets on sale</p><ul class="types">${renderTicketTypes(concert.ticketTypes)}</ul>` : ''}
       ${soldInNote}
       <a class="ts" href="${h(concert.ticketswapUrl)}" target="_blank" rel="noopener">Open on TicketSwap <span class="arr">→</span></a>
@@ -117,7 +128,7 @@ function renderConcert(concert) {
       </div>
       <div class="info">
         <h3>${h(concert.artist)}</h3>
-        <p class="meta">${logoHtml}${h(concert.venue)}${concert.hall ? ` <span class="hall">${h(concert.hall)}</span>` : ''} · ${h(concert.time)}</p>
+        <p class="meta">${logoHtml}${h(concert.venue)}${concert.hall ? ` <span class="hall">${h(concert.hall)}</span>` : ''} · ${timeDisplay}</p>
         ${renderAvail(concert)}
       </div>
       <i class="chev"></i>

@@ -1,9 +1,50 @@
 {
-  "scrapedAt": "2026-06-01T07:04:36.417Z",
+  "scrapedAt": "2026-06-01T07:13:12.403Z",
   "venues": {
     "ab": {
       "venue": "Ancienne Belgique",
       "events": [
+        {
+          "__typename": "Event",
+          "id": "RXZlbnQ6MDE5YjdjYmItNmYzZS03Yzc3LWJlOGUtNTM1ZDM4Y2M2MDg4",
+          "alias": null,
+          "startDate": "2026-01-01T00:00:00+01:00",
+          "endDate": "2026-12-31T23:59:00+01:00",
+          "isStartTimeUnknown": false,
+          "hasOngoingEventType": true,
+          "slug": "jetonbon-ancienne-belgique",
+          "name": "Jetonbon - Ancienne Belgique",
+          "category": "CONCERTS",
+          "imageSmallUrl": null,
+          "imageUrl": "https://ticketswap-image-cdn.b-cdn.net/public/202302/ab-ancienne-belgique-71909400.header.jpeg",
+          "status": "ACTIVE",
+          "rsvpStatus": null,
+          "uri": {
+            "__typename": "Uri",
+            "path": "/event/jetonbon-ancienne-belgique/019b7cbb-6f3e-7c77-be8e-535d38cc6088"
+          },
+          "availableTicketsCount": 1,
+          "availableEntranceTicketsCount": 1,
+          "location": {
+            "__ref": "Location:TG9jYXRpb246MjA4"
+          },
+          "country": {
+            "__ref": "Country:{\"code\":\"BE\"}"
+          },
+          "favorites": {
+            "__typename": "EventFavorites",
+            "summary": null
+          },
+          "artists:{}": {
+            "__typename": "ArtistConnection",
+            "edges": []
+          },
+          "lowestPrice": {
+            "__typename": "Money",
+            "amount": "1535",
+            "currency": "EUR"
+          }
+        },
         {
           "__typename": "Event",
           "id": "RXZlbnQ6MDE5ZGUzMTMtN2U2OS03NTNjLWI5ZjYtYmNhMzc4YWYxZjQ2",

@@ -61,17 +61,27 @@ async function scrapeVenue(page, venue, dates) {
       id: e.id,
       name: e.name,
       startDate: e.startDate,
+      endDate: e.endDate ?? null,
       lowestPrice: e.lowestPrice?.amount ?? null,
       originalPrice: e.originalPrice?.amount ?? null,
       available: e.availableTicketsCount ?? 0,
       uri: e.uri?.path ?? null,
       hasOngoingEventType: e.hasOngoingEventType ?? false,
+      imageUrl: e.imageUrl ?? null,
     }));
     return { events, rawEvents: entries };
   });
 
   const maxDate = dates[dates.length - 1];
-  const filtered = events.filter(e => !e.hasOngoingEventType && brusselsDateFromIso(e.startDate) >= dates[0] && brusselsDateFromIso(e.startDate) <= maxDate);
+  const filtered = events.filter(e => {
+    if (e.hasOngoingEventType) {
+      // year-round / subscription events: include if still running
+      const endD = e.endDate ? brusselsDateFromIso(e.endDate) : null;
+      return !endD || endD >= dates[0];
+    }
+    const startD = brusselsDateFromIso(e.startDate);
+    return startD >= dates[0] && startD <= maxDate;
+  });
   const filteredIds = new Set(filtered.map(e => e.id));
   venue._rawEvents = rawEvents.filter(e => filteredIds.has(e.id));
 
@@ -87,8 +97,11 @@ async function scrapeVenue(page, venue, dates) {
         hall: '',
         venueId: venue.id,
         time: brusselsTime(e.startDate),
+        endTime: e.endDate ? brusselsTime(e.endDate) : null,
         genre: '',
-        date: brusselsDateFromIso(e.startDate),
+        date: e.hasOngoingEventType ? dates[0] : brusselsDateFromIso(e.startDate),
+        isOngoing: e.hasOngoingEventType,
+        imageUrl: e.imageUrl || null,
         soldOut: available === 0,
         lowestPrice,
         originalPrice,
