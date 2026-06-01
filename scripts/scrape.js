@@ -12,6 +12,10 @@ chromium.use(StealthPlugin());
 const fs = require('fs');
 const path = require('path');
 
+const HIDDEN_SLUGS = new Set([
+  'jetonbon-ancienne-belgique',
+]);
+
 const VENUES = [
   { id: 'ab', name: 'Ancienne Belgique', slug: 'ancienne-belgique',             tsId: 208   },
   { id: 'cr', name: 'Cirque Royal',      slug: 'cirque-royal-koninklijk-circus', tsId: 12796 },
@@ -74,6 +78,7 @@ async function scrapeVenue(page, venue, dates) {
 
   const maxDate = dates[dates.length - 1];
   const filtered = events.filter(e => {
+    if (e.uri && [...HIDDEN_SLUGS].some(slug => e.uri.includes(`/${slug}/`))) return false;
     if (e.hasOngoingEventType) {
       // year-round / subscription events: include if still running
       const endD = e.endDate ? brusselsDateFromIso(e.endDate) : null;
