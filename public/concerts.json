@@ -1,29 +1,6 @@
 {
-  "updatedAt": "2026-06-01T07:13:12.403Z",
+  "updatedAt": "2026-06-01T07:18:10.671Z",
   "concerts": [
-    {
-      "id": "RXZlbnQ6MDE5YjdjYmItNmYzZS03Yzc3LWJlOGUtNTM1ZDM4Y2M2MDg4",
-      "artist": "Jetonbon - Ancienne Belgique",
-      "venue": "Ancienne Belgique",
-      "hall": "",
-      "venueId": "ab",
-      "time": "00:00",
-      "endTime": "23:59",
-      "genre": "",
-      "date": "2026-06-01",
-      "isOngoing": true,
-      "imageUrl": "https://ticketswap-image-cdn.b-cdn.net/public/202302/ab-ancienne-belgique-71909400.header.jpeg",
-      "soldOut": false,
-      "lowestPrice": 15.35,
-      "originalPrice": null,
-      "availability": 1,
-      "availabilityStatus": "low",
-      "soldIn24h": 0,
-      "lastSoldPrice": null,
-      "lastSoldAgo": null,
-      "ticketTypes": [],
-      "ticketswapUrl": "https://www.ticketswap.com/event/jetonbon-ancienne-belgique/019b7cbb-6f3e-7c77-be8e-535d38cc6088"
-    },
     {
       "id": "RXZlbnQ6MDE5ZGUzMTMtN2U2OS03NTNjLWI5ZjYtYmNhMzc4YWYxZjQ2",
       "artist": "Moor Mother + Aquiles Navarro & Olof Melander",
