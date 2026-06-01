@@ -59,7 +59,7 @@ function h(str) {
 function renderAvail(concert) {
   if (concert.soldOut) {
     const extra = concert.lastSoldAgo ? ` · last sold ${h(concert.lastSoldAgo)}` : '';
-    return `<p class="avail out">Sold out${extra}</p>`;
+    return `<p class="avail out">Not listed${extra}</p>`;
   }
   const cls = concert.availabilityStatus === 'low' ? 'avail low' : 'avail';
   return `<p class="${cls}">${h(concert.availability)} ticket${concert.availability === 1 ? '' : 's'} left</p>`;
@@ -76,7 +76,7 @@ function renderTicketTypes(types) {
 function renderConcert(concert) {
   const soldoutClass = concert.soldOut ? ' soldout' : '';
   const priceLabel = concert.soldOut
-    ? (concert.lastSoldPrice ? 'last sold' : 'sold out')
+    ? (concert.lastSoldPrice ? 'last sold' : 'not listed')
     : null;
   const priceAmt = concert.soldOut
     ? (concert.lastSoldPrice ? `€${Math.round(concert.lastSoldPrice)}` : '—')
