@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-01T10:26:18.949Z",
+  "updatedAt": "2026-06-01T16:23:09.271Z",
   "concerts": [
     {
       "id": "RXZlbnQ6MDE5ZGUzMTMtN2U2OS03NTNjLWI5ZjYtYmNhMzc4YWYxZjQ2",
@@ -13,11 +13,11 @@
       "date": "2026-06-02",
       "isOngoing": false,
       "imageUrl": "https://ticketswap-image-cdn.b-cdn.net/public/202302/ab-ancienne-belgique-71909400.header.jpeg",
-      "soldOut": true,
-      "lowestPrice": null,
+      "soldOut": false,
+      "lowestPrice": 15.97,
       "originalPrice": null,
-      "availability": 0,
-      "availabilityStatus": "out",
+      "availability": 1,
+      "availabilityStatus": "low",
       "soldIn24h": 0,
       "lastSoldPrice": null,
       "lastSoldAgo": null,
@@ -138,29 +138,6 @@
       "lastSoldAgo": null,
       "ticketTypes": [],
       "ticketswapUrl": "https://www.ticketswap.com/concert-tickets/pacifica-brussels-cirque-royal-koninklijk-circus-2026-06-03-CYjY3iBA8VUHBq7Tua8ng"
-    },
-    {
-      "id": "RXZlbnQ6MDE5Y2EwYjYtYzlmYS03NTRmLWEyMzAtZjJkYjAxYWEzYWIz",
-      "artist": "Jazzy Bazz",
-      "venue": "La Madeleine",
-      "hall": "",
-      "venueId": "lm",
-      "time": "20:00",
-      "endTime": null,
-      "genre": "",
-      "date": "2026-06-03",
-      "isOngoing": false,
-      "imageUrl": "https://ticketswap-image-cdn.b-cdn.net/public/202504/0426c401-9cb1-4a03-9e0a-6fdc6ab4d1c7.jpg",
-      "soldOut": true,
-      "lowestPrice": null,
-      "originalPrice": null,
-      "availability": 0,
-      "availabilityStatus": "out",
-      "soldIn24h": 0,
-      "lastSoldPrice": null,
-      "lastSoldAgo": null,
-      "ticketTypes": [],
-      "ticketswapUrl": "https://www.ticketswap.com/concert-tickets/jazzy-bazz-brussels-la-madeleine-2026-06-03-CYZBFfHsUJTCDHeFm8qTx"
     }
   ]
 }
