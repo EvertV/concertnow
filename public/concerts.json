@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-02T06:53:19.568Z",
+  "updatedAt": "2026-06-02T11:22:48.813Z",
   "concerts": [
     {
       "id": "RXZlbnQ6MDE5ZGUzMTMtN2U2OS03NTNjLWI5ZjYtYmNhMzc4YWYxZjQ2",
@@ -62,7 +62,7 @@
       "soldOut": false,
       "lowestPrice": 33.06,
       "originalPrice": null,
-      "availability": 13,
+      "availability": 22,
       "availabilityStatus": "ok",
       "soldIn24h": 0,
       "lastSoldPrice": null,
@@ -104,7 +104,7 @@
       "genre": "",
       "date": "2026-06-03",
       "isOngoing": false,
-      "imageUrl": "https://ticketswap-image-cdn.b-cdn.net/public/202302/ab-ancienne-belgique-71909400.header.jpeg",
+      "imageUrl": "https://ticketswap-image-cdn.b-cdn.net/public/202606/holy-ancienne-belgique-03-june-2026-1780396429.image.jpeg",
       "soldOut": true,
       "lowestPrice": null,
       "originalPrice": null,
