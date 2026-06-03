@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-02T22:25:27.144Z",
+  "updatedAt": "2026-06-03T00:13:22.965Z",
   "concerts": [
     {
       "id": "RXZlbnQ6ZWIzMjNkYjItZDBhYi00OTUwLWI1OGMtYzRmOTM5YTg1NDVh",
@@ -16,7 +16,7 @@
       "soldOut": false,
       "lowestPrice": 38.57,
       "originalPrice": null,
-      "availability": 25,
+      "availability": 23,
       "availabilityStatus": "ok",
       "soldIn24h": 0,
       "lastSoldPrice": null,
@@ -106,9 +106,9 @@
       "isOngoing": false,
       "imageUrl": "https://ticketswap-image-cdn.b-cdn.net/public/202510/ismo-perseverance-tour-cirque-royal-koninklijk-circus-04-june-2026-1761023004.image.jpeg",
       "soldOut": false,
-      "lowestPrice": 35.27,
+      "lowestPrice": 38.57,
       "originalPrice": null,
-      "availability": 14,
+      "availability": 12,
       "availabilityStatus": "ok",
       "soldIn24h": 0,
       "lastSoldPrice": null,
@@ -150,7 +150,7 @@
       "genre": "",
       "date": "2026-06-05",
       "isOngoing": false,
-      "imageUrl": "https://ticketswap-image-cdn.b-cdn.net/static/images/placeholders/concert-5.jpg",
+      "imageUrl": "https://ticketswap-image-cdn.b-cdn.net/static/images/placeholders/concert-3.jpg",
       "soldOut": false,
       "lowestPrice": 27.55,
       "originalPrice": null,
