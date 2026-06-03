@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-03T10:24:52.937Z",
+  "updatedAt": "2026-06-03T15:20:25.247Z",
   "concerts": [
     {
       "id": "RXZlbnQ6ZWIzMjNkYjItZDBhYi00OTUwLWI1OGMtYzRmOTM5YTg1NDVh",
@@ -16,7 +16,7 @@
       "soldOut": false,
       "lowestPrice": 39.68,
       "originalPrice": null,
-      "availability": 24,
+      "availability": 21,
       "availabilityStatus": "ok",
       "soldIn24h": 0,
       "lastSoldPrice": null,
@@ -108,7 +108,7 @@
       "soldOut": false,
       "lowestPrice": 42.98,
       "originalPrice": null,
-      "availability": 11,
+      "availability": 10,
       "availabilityStatus": "ok",
       "soldIn24h": 0,
       "lastSoldPrice": null,
@@ -141,16 +141,16 @@
     },
     {
       "id": "RXZlbnQ6MDE5YmQwZDYtODIwMi03YzU0LWEyZjctMjVjNGFmNzkwYzAz",
-      "artist": "Jeroen Leenders Laatste Kaartjes",
+      "artist": "Jeroen Leenders - Laatste Kaartjes",
       "venue": "La Madeleine",
       "hall": "",
       "venueId": "lm",
       "time": "20:00",
-      "endTime": null,
+      "endTime": "22:00",
       "genre": "",
       "date": "2026-06-05",
       "isOngoing": false,
-      "imageUrl": "https://ticketswap-image-cdn.b-cdn.net/static/images/placeholders/concert-3.jpg",
+      "imageUrl": "https://ticketswap-image-cdn.b-cdn.net/public/202606/jeroen-leenders-laatste-kaartjes-la-madeleine-05-june-2026-1780483863.image.jpeg",
       "soldOut": false,
       "lowestPrice": 27.55,
       "originalPrice": null,
@@ -160,7 +160,7 @@
       "lastSoldPrice": null,
       "lastSoldAgo": null,
       "ticketTypes": [],
-      "ticketswapUrl": "https://www.ticketswap.com/concert-tickets/jeroen-leenders-laatste-kaartjes-brussels-la-madeleine-2026-06-05-CXEkkyTswNh9zTbHqq5wx"
+      "ticketswapUrl": "https://www.ticketswap.com/comedy-show-tickets/jeroen-leenders-laatste-kaartjes-brussels-la-madeleine-2026-06-05-CXEkkyTswNh9zTbHqq5wx"
     },
     {
       "id": "RXZlbnQ6MjM5NDFhYWQtMjc0Yi00MmE2LWJjNmUtMmRmZGU0NmM2OTFk",
