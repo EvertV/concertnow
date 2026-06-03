@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-03T05:29:05.356Z",
+  "updatedAt": "2026-06-03T10:24:52.937Z",
   "concerts": [
     {
       "id": "RXZlbnQ6ZWIzMjNkYjItZDBhYi00OTUwLWI1OGMtYzRmOTM5YTg1NDVh",
@@ -14,9 +14,9 @@
       "isOngoing": false,
       "imageUrl": "https://ticketswap-image-cdn.b-cdn.net/public/202506/panayotis-pascot-cirque-royal-koninklijk-circus-03-june-2026-1749445429.image.jpeg",
       "soldOut": false,
-      "lowestPrice": 38.57,
+      "lowestPrice": 39.68,
       "originalPrice": null,
-      "availability": 23,
+      "availability": 24,
       "availabilityStatus": "ok",
       "soldIn24h": 0,
       "lastSoldPrice": null,
@@ -106,9 +106,9 @@
       "isOngoing": false,
       "imageUrl": "https://ticketswap-image-cdn.b-cdn.net/public/202510/ismo-perseverance-tour-cirque-royal-koninklijk-circus-04-june-2026-1761023004.image.jpeg",
       "soldOut": false,
-      "lowestPrice": 38.57,
+      "lowestPrice": 42.98,
       "originalPrice": null,
-      "availability": 12,
+      "availability": 11,
       "availabilityStatus": "ok",
       "soldIn24h": 0,
       "lastSoldPrice": null,
