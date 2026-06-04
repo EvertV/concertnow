@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-04T18:35:47.735Z",
+  "updatedAt": "2026-06-04T21:01:16.631Z",
   "concerts": [
     {
       "id": "RXZlbnQ6MDE5YTA1MjYtN2ViNC03YzU0LTkzM2YtOTY3ODU4MTRlMDA0",
@@ -177,7 +177,7 @@
       "soldOut": false,
       "lowestPrice": 27.55,
       "originalPrice": null,
-      "availability": 25,
+      "availability": 23,
       "availabilityStatus": "ok",
       "soldIn24h": 0,
       "lastSoldPrice": null,
@@ -198,10 +198,10 @@
       "isOngoing": false,
       "imageUrl": "https://ticketswap-image-cdn.b-cdn.net/public/202506/just-vox-ancienne-belgique-06-june-2026-1749370586.image.jpeg",
       "soldOut": false,
-      "lowestPrice": 35,
+      "lowestPrice": 38.57,
       "originalPrice": null,
-      "availability": 4,
-      "availabilityStatus": "low",
+      "availability": 7,
+      "availabilityStatus": "ok",
       "soldIn24h": 0,
       "lastSoldPrice": null,
       "lastSoldAgo": null,
@@ -265,7 +265,7 @@
       "genre": "",
       "date": "2026-06-06",
       "isOngoing": false,
-      "imageUrl": "https://ticketswap-image-cdn.b-cdn.net/static/images/placeholders/concert-4.jpg",
+      "imageUrl": "https://ticketswap-image-cdn.b-cdn.net/static/images/placeholders/concert-7.jpg",
       "soldOut": true,
       "lowestPrice": null,
       "originalPrice": null,
