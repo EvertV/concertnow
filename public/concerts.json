@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-05T00:15:47.750Z",
+  "updatedAt": "2026-06-05T04:58:32.451Z",
   "concerts": [
     {
       "id": "RXZlbnQ6MDE5ZDU3ODItY2M3Yy03ZDc4LWIyZGYtYjkwMDJhMGZhNTYx",
@@ -242,7 +242,7 @@
       "genre": "",
       "date": "2026-06-06",
       "isOngoing": false,
-      "imageUrl": "https://ticketswap-image-cdn.b-cdn.net/static/images/placeholders/concert-1.jpg",
+      "imageUrl": "https://ticketswap-image-cdn.b-cdn.net/static/images/placeholders/concert-3.jpg",
       "soldOut": true,
       "lowestPrice": null,
       "originalPrice": null,
