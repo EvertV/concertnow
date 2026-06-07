@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-07T14:29:58.914Z",
+  "updatedAt": "2026-06-07T15:54:45.922Z",
   "concerts": [
     {
       "id": "RXZlbnQ6MDE5YzQ5NWUtMzBlZC03MDhkLThmODgtMzY4NGViY2Q5NzZm",
@@ -16,7 +16,7 @@
       "soldOut": false,
       "lowestPrice": 22.15,
       "originalPrice": null,
-      "availability": 15,
+      "availability": 13,
       "availabilityStatus": "ok",
       "soldIn24h": 0,
       "lastSoldPrice": null,
