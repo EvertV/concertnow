@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-07T17:24:26.793Z",
+  "updatedAt": "2026-06-07T18:50:40.431Z",
   "concerts": [
     {
       "id": "RXZlbnQ6MDE5YzQ5NWUtMzBlZC03MDhkLThmODgtMzY4NGViY2Q5NzZm",
@@ -14,7 +14,7 @@
       "isOngoing": false,
       "imageUrl": "https://ticketswap-image-cdn.b-cdn.net/public/202606/humbe-ancienne-belgique-07-june-2026-1780482477.image.jpeg",
       "soldOut": false,
-      "lowestPrice": 22.15,
+      "lowestPrice": 20.09,
       "originalPrice": null,
       "availability": 17,
       "availabilityStatus": "ok",
