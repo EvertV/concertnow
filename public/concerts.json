@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-08T19:24:40.548Z",
+  "updatedAt": "2026-06-08T21:23:43.348Z",
   "concerts": [
     {
       "id": "RXZlbnQ6MDE5Y2M3MWItZDIwYy03ZTEyLWIwNTgtMjVmYTRlNTEzNThj",
@@ -36,11 +36,11 @@
       "date": "2026-06-09",
       "isOngoing": false,
       "imageUrl": "https://ticketswap-image-cdn.b-cdn.net/public/202512/patrick-watson-cirque-royal-koninklijk-circus-09-june-2026-1765439718.image.jpeg",
-      "soldOut": true,
+      "soldOut": false,
       "lowestPrice": 50.45,
       "originalPrice": null,
-      "availability": 0,
-      "availabilityStatus": "out",
+      "availability": 1,
+      "availabilityStatus": "low",
       "soldIn24h": 0,
       "lastSoldPrice": null,
       "lastSoldAgo": null,
@@ -129,9 +129,9 @@
       "isOngoing": false,
       "imageUrl": "https://ticketswap-image-cdn.b-cdn.net/public/202602/ashnikko-smoochies-tour-la-madeleine-07-february-2026-1770309645.image.jpeg",
       "soldOut": false,
-      "lowestPrice": 18.03,
+      "lowestPrice": 17,
       "originalPrice": null,
-      "availability": 67,
+      "availability": 73,
       "availabilityStatus": "ok",
       "soldIn24h": 0,
       "lastSoldPrice": null,
