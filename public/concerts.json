@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-08T01:42:05.958Z",
+  "updatedAt": "2026-06-08T06:50:57.355Z",
   "concerts": [
     {
       "id": "RXZlbnQ6MDE5Y2M3MWItZDIwYy03ZTEyLWIwNTgtMjVmYTRlNTEzNThj",
@@ -94,6 +94,29 @@
       "ticketswapUrl": "https://www.ticketswap.com/concert-tickets/teddybear-brussels-botanique-2026-06-09-CZ8ueNw2ZqaczF3LQBHRQ"
     },
     {
+      "id": "RXZlbnQ6MWJmNWQ3MmEtMGRiZS00YWZlLTlhODYtZDY5NTkxZDJkODhl",
+      "artist": "Ashnikko - Smoochies Tour",
+      "venue": "La Madeleine",
+      "hall": "",
+      "venueId": "lm",
+      "time": "19:00",
+      "endTime": null,
+      "genre": "",
+      "date": "2026-06-10",
+      "isOngoing": false,
+      "imageUrl": "https://ticketswap-image-cdn.b-cdn.net/public/202602/ashnikko-smoochies-tour-la-madeleine-07-february-2026-1770309645.image.jpeg",
+      "soldOut": false,
+      "lowestPrice": 17,
+      "originalPrice": null,
+      "availability": 52,
+      "availabilityStatus": "ok",
+      "soldIn24h": 0,
+      "lastSoldPrice": null,
+      "lastSoldAgo": null,
+      "ticketTypes": [],
+      "ticketswapUrl": "https://www.ticketswap.com/concert-tickets/ashnikko-brussels-la-madeleine-2026-06-10-4TFkAkz3vSUdaKufFiH5au"
+    },
+    {
       "id": "RXZlbnQ6MDE5ZDBiZWMtN2ZmMC03MDcyLWIxMjktNTc5ZmE3NzFiOGRk",
       "artist": "Grace Ives - Félicette",
       "venue": "Botanique",
@@ -115,29 +138,6 @@
       "lastSoldAgo": null,
       "ticketTypes": [],
       "ticketswapUrl": "https://www.ticketswap.com/concert-tickets/grace-ives-felicette-brussels-botanique-2026-06-10-CZEbGFpCwwUTvVRN3FYA8"
-    },
-    {
-      "id": "RXZlbnQ6MWJmNWQ3MmEtMGRiZS00YWZlLTlhODYtZDY5NTkxZDJkODhl",
-      "artist": "Ashnikko - Smoochies Tour",
-      "venue": "La Madeleine",
-      "hall": "",
-      "venueId": "lm",
-      "time": "19:00",
-      "endTime": null,
-      "genre": "",
-      "date": "2026-06-10",
-      "isOngoing": false,
-      "imageUrl": "https://ticketswap-image-cdn.b-cdn.net/public/202602/ashnikko-smoochies-tour-la-madeleine-07-february-2026-1770309645.image.jpeg",
-      "soldOut": false,
-      "lowestPrice": 20.26,
-      "originalPrice": null,
-      "availability": 50,
-      "availabilityStatus": "ok",
-      "soldIn24h": 0,
-      "lastSoldPrice": null,
-      "lastSoldAgo": null,
-      "ticketTypes": [],
-      "ticketswapUrl": "https://www.ticketswap.com/concert-tickets/ashnikko-brussels-la-madeleine-2026-06-10-4TFkAkz3vSUdaKufFiH5au"
     },
     {
       "id": "RXZlbnQ6MDE5ZDFmOGMtMzM1My03MDE5LTg2MTQtNTU0ZTJjMzI1ZjY5",
