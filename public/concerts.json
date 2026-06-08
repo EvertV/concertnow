@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-08T12:03:16.931Z",
+  "updatedAt": "2026-06-08T16:36:59.740Z",
   "concerts": [
     {
       "id": "RXZlbnQ6MDE5Y2M3MWItZDIwYy03ZTEyLWIwNTgtMjVmYTRlNTEzNThj",
@@ -81,7 +81,7 @@
       "genre": "",
       "date": "2026-06-09",
       "isOngoing": false,
-      "imageUrl": "https://ticketswap-image-cdn.b-cdn.net/public/202603/teddybear-botanique-09-june-2026-1774340907.image.jpeg",
+      "imageUrl": "https://ticketswap-image-cdn.b-cdn.net/public/202606/teddybear-botanique-09-june-2026-1780920277.image.jpeg",
       "soldOut": true,
       "lowestPrice": null,
       "originalPrice": null,
@@ -129,9 +129,9 @@
       "isOngoing": false,
       "imageUrl": "https://ticketswap-image-cdn.b-cdn.net/public/202602/ashnikko-smoochies-tour-la-madeleine-07-february-2026-1770309645.image.jpeg",
       "soldOut": false,
-      "lowestPrice": 17,
+      "lowestPrice": 19.06,
       "originalPrice": null,
-      "availability": 54,
+      "availability": 59,
       "availabilityStatus": "ok",
       "soldIn24h": 0,
       "lastSoldPrice": null,
