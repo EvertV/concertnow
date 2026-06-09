@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-09T22:11:48.889Z",
+  "updatedAt": "2026-06-09T23:53:23.304Z",
   "concerts": [
     {
       "id": "RXZlbnQ6MDE5ZDBiZWMtN2ZmMC03MDcyLWIxMjktNTc5ZmE3NzFiOGRk",
@@ -16,7 +16,7 @@
       "soldOut": false,
       "lowestPrice": 15.6,
       "originalPrice": null,
-      "availability": 15,
+      "availability": 16,
       "availabilityStatus": "ok",
       "soldIn24h": 0,
       "lastSoldPrice": null,
@@ -37,9 +37,9 @@
       "isOngoing": false,
       "imageUrl": "https://ticketswap-image-cdn.b-cdn.net/public/202602/ashnikko-smoochies-tour-la-madeleine-07-february-2026-1770309645.image.jpeg",
       "soldOut": false,
-      "lowestPrice": 15.97,
+      "lowestPrice": 16.48,
       "originalPrice": null,
-      "availability": 97,
+      "availability": 95,
       "availabilityStatus": "ok",
       "soldIn24h": 0,
       "lastSoldPrice": null,
@@ -173,7 +173,7 @@
       "genre": "",
       "date": "2026-06-11",
       "isOngoing": false,
-      "imageUrl": "https://ticketswap-image-cdn.b-cdn.net/static/images/placeholders/concert-3.jpg",
+      "imageUrl": "https://ticketswap-image-cdn.b-cdn.net/static/images/placeholders/concert-4.jpg",
       "soldOut": false,
       "lowestPrice": 65.02,
       "originalPrice": null,
