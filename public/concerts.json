@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-12T09:44:42.189Z",
+  "updatedAt": "2026-06-12T12:58:08.914Z",
   "concerts": [
     {
       "id": "RXZlbnQ6MDE5YThiZjMtNTFlYS03OTRkLWJmODMtZjY0YTJhYjNhNDEy",
@@ -14,9 +14,9 @@
       "isOngoing": false,
       "imageUrl": "https://ticketswap-image-cdn.b-cdn.net/public/202511/cabaret-voltaire-ancienne-belgique-12-june-2026-1763284575.image.jpeg",
       "soldOut": false,
-      "lowestPrice": 30.86,
+      "lowestPrice": 29.76,
       "originalPrice": null,
-      "availability": 47,
+      "availability": 52,
       "availabilityStatus": "ok",
       "soldIn24h": 0,
       "lastSoldPrice": null,
@@ -71,29 +71,6 @@
       "ticketswapUrl": "https://www.ticketswap.com/concert-tickets/ana-carla-maza-brussels-la-madeleine-2026-06-13-CZG7VeAysY73L2uUKXYdK"
     },
     {
-      "id": "RXZlbnQ6ZjM4OTczMWQtYzRmMi00MzIxLThiZDItYTNiMjdlNGQwYWVm",
-      "artist": "Dernière: 'One Song' - Miet Warlop",
-      "venue": "Ancienne Belgique",
-      "hall": "",
-      "venueId": "ab",
-      "time": "19:00",
-      "endTime": "22:30",
-      "genre": "",
-      "date": "2026-06-13",
-      "isOngoing": false,
-      "imageUrl": "https://ticketswap-image-cdn.b-cdn.net/public/202506/derniere-one-song-miet-warlop-ancienne-belgique-13-june-2026-1750580174.image.jpeg",
-      "soldOut": true,
-      "lowestPrice": 28.65,
-      "originalPrice": null,
-      "availability": 0,
-      "availabilityStatus": "out",
-      "soldIn24h": 0,
-      "lastSoldPrice": null,
-      "lastSoldAgo": null,
-      "ticketTypes": [],
-      "ticketswapUrl": "https://www.ticketswap.com/concert-tickets/miet-warlop-brussels-ancienne-belgique-2026-06-13-X5EVYNrEqjcR4MA2kdwBvv"
-    },
-    {
       "id": "RXZlbnQ6MDE5YmNiMzAtMGU2Mi03N2RlLWEwMjYtZjEwNzExYTFlY2Qy",
       "artist": "Red Leather",
       "venue": "Ancienne Belgique",
@@ -115,6 +92,29 @@
       "lastSoldAgo": null,
       "ticketTypes": [],
       "ticketswapUrl": "https://www.ticketswap.com/concert-tickets/red-leather-brussels-ancienne-belgique-2026-06-13-CXCgHFbUpFC1YGPTfdSA5"
+    },
+    {
+      "id": "RXZlbnQ6ZjM4OTczMWQtYzRmMi00MzIxLThiZDItYTNiMjdlNGQwYWVm",
+      "artist": "Dernière: 'One Song' - Miet Warlop",
+      "venue": "Ancienne Belgique",
+      "hall": "",
+      "venueId": "ab",
+      "time": "19:00",
+      "endTime": "22:30",
+      "genre": "",
+      "date": "2026-06-13",
+      "isOngoing": false,
+      "imageUrl": "https://ticketswap-image-cdn.b-cdn.net/public/202506/derniere-one-song-miet-warlop-ancienne-belgique-13-june-2026-1750580174.image.jpeg",
+      "soldOut": true,
+      "lowestPrice": null,
+      "originalPrice": null,
+      "availability": 0,
+      "availabilityStatus": "out",
+      "soldIn24h": 0,
+      "lastSoldPrice": null,
+      "lastSoldAgo": null,
+      "ticketTypes": [],
+      "ticketswapUrl": "https://www.ticketswap.com/concert-tickets/miet-warlop-brussels-ancienne-belgique-2026-06-13-X5EVYNrEqjcR4MA2kdwBvv"
     },
     {
       "id": "RXZlbnQ6MDE5ZDliZTgtMWMxOC03ZjM0LTllNDctYjEzNDRjNDdmNTVk",
